@@ -1,11 +1,11 @@
 html{ 
     height: 100%;
-     
 }
 
 body{
     height: 100%;
     background: linear-gradient(#e66465, #9198e5);
+
 }
 
 #site_name{
@@ -36,11 +36,85 @@ body{
     color: white;
 }
 
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 20%;
-    height: 3px;
-    margin-bottom: 2vh;
+#id_left_container {
+    background-image: url(receipt.jpg);
+    background-position: center;
+    width: 50%;
+    filter: brightness(110%);
+    border-image: linear-gradient(#e66465, #9198e5);
+    border: 16px solid transparent;
+    border-image-slice: 1;
+    border-radius: 20px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
 }
+
+h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 15px;
+    color: #1e73ff ;
+}
+
+#id_location{
+    font-size: 1rem;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    border-top: 2px dashed black;
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+    margin-bottom: 1px;
+  }
+
+#id_curr_time {
+    font-weight: 600;
+}
+
+#id_just_time {
+    font-size: 2rem;
+}
+
+.tracks {
+    font-family: 'receipt', 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+}
+
+thead {
+    border-top: 1px dashed;
+    border-bottom: 1px dashed;
+}
+
+td {
+    padding: 2px 10px;
+    vertical-align: top;
+}
+
+.begin {
+    padding-left: 0vh;
+}
+
+.length {
+    text-align: right;
+    padding-right: 0px;
+}
+
+#id_predicted_time {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: red;
+    border-top: 1px dashed;
+    border-bottom: 1px dashed;
+}
+
+#id_user_picture {
+    width: 150px !important;
+}
+
