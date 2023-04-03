@@ -1,0 +1,46 @@
+html{ 
+    height: 100%;
+     
+}
+
+body{
+    height: 100%;
+    background: linear-gradient(#e66465, #9198e5);
+}
+
+#site_name{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 3vw;
+    text-align: center;
+    margin-top: 1vw;
+}
+
+#id_user_name {
+    text-align: end;
+    color: white;
+    font-style: italic;
+    font-size: 100%;
+    margin-bottom: 3vw;
+    margin-right: 5px;
+}
+
+.btn {
+    background-color: #e66465;
+    color: white;
+}
+
+.btn:hover {
+    background-color:#9198e5;
+    color: white;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20%;
+    height: 3px;
+    margin-bottom: 2vh;
+}

@@ -1,0 +1,37 @@
+{% extends "notime/base.html" %}
+
+{% block user-info %}
+    <span id="id_user_name">
+        welcome, {{request.user.first_name}} {{request.user.last_name}}!
+    </span>
+{% endblock %}
+
+{% block content %}
+    <div class="col">
+        <div class="row" id="id_just_time">
+            THE TIME NOW IS<br>
+             <span id="curr_time">10:10 am</span>
+        </div>
+        <div class="row">
+            <span id="id_arriving">ARRIVING NOW?</span>
+            You may be waiting until 
+        </div>
+        <div class="row" id="id_predicted_time">
+            10:15 am
+        </div>
+        <div class="row" id="id_predicted_error">
+            +- 40 seconds
+        </div>
+        <div class="row">
+            to place an order at
+            <span id="id_name">LA PRIMA</span>
+           
+        </div>
+
+    </div>
+    <div class="col">
+    </div>
+    
+    
+
+{% endblock %}
