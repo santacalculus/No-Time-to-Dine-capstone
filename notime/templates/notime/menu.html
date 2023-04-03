@@ -2,7 +2,10 @@
 
 {% block user-info %}
     <span id="id_user_name">
-        welcome, {{request.user.first_name}} {{request.user.last_name}}!
+        welcome, {{request.user.first_name}} {{request.user.last_name}}!<br>
+        <a href="{% url 'logout' %}" id="id_nav_logout" class="btn">
+                logout
+        </a>
     </span>
 {% endblock %}
 

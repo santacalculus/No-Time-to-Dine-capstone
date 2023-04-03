@@ -17,6 +17,23 @@ body{
     margin-top: 1vw;
 }
 
+#id_nav_logout, #id_register_link {
+    background-color:#9198e5;
+    color: white;
+}
+
+.login-table {
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+#id_page_name {
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
 #id_user_name {
     text-align: end;
     color: white;
@@ -29,6 +46,7 @@ body{
 .btn {
     background-color: #e66465;
     color: white;
+    padding: 5px;
 }
 
 .btn:hover {
@@ -118,3 +136,45 @@ td {
     width: 150px !important;
 }
 
+#id_person_icon {
+    width: 100px !important;
+}
+
+#id_sticky_note {
+    width: 50%;
+    background-color: #ed5565;
+    padding: 1em;
+    -moz-box-shadow: 5px 5px 7px #212121;
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    -moz-transition: -moz-transform 0.15s linear;
+    -o-transition: -o-transform 0.15s linear;
+    -webkit-transition: -webkit-transform 0.15s linear;
+
+    -o-transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    position: relative;
+    top: 5px;
+}
+
+#id_line_num {
+    color: #f6e2b9;
+    font-size: 8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 1px;
+}
+
+#id_sticky_text{
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    margin-top: 0px;
+    padding-top: 0px;
+    text-align: center;
+}

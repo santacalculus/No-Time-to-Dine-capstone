@@ -7,30 +7,83 @@
 {% endblock %}
 
 {% block content %}
-    <div class="col">
-        <div class="row" id="id_just_time">
-            THE TIME NOW IS<br>
-             <span id="curr_time">10:10 am</span>
-        </div>
-        <div class="row">
-            <span id="id_arriving">ARRIVING NOW?</span>
-            You may be waiting until 
-        </div>
-        <div class="row" id="id_predicted_time">
-            10:15 am
-        </div>
-        <div class="row" id="id_predicted_error">
-            +- 40 seconds
-        </div>
-        <div class="row">
-            to place an order at
-            <span id="id_name">LA PRIMA</span>
-           
-        </div>
+    
+    <div class="row">
+            {% load static %}
+        <div class="col" id="id_left_container">
+            <div class="receipt-container">
+                <h2>La Prima</h2>
+                <p id="id_location">WEAN HALL, fifth floor</p>
+                <p>DATE: MONDAY, APRIL 3, 2023</p>
+                <table class="tracks">
+                    <thead>
+                        <tr>
+                            <td class="begin"> QTY </td>
+                            <td class="name"> ITEM </td>
+                            <td class="length"> AMT </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="begin" style="font-weight: 500;"> 01 </td>
+                            <td class="name" style="font-weight: 500;"> THE TIME NOW IS </td>
+                            <td class="length"> 10:10 AM </td>
+                        </tr>
+                        <tr>
+                            <td class="begin"> 02 </td>
+                            <td class="name" style="font-weight: 700;"> ARRIVING NOW?</td>
+                            <td class="length"></td>
+                        </tr>
+                        <tr>
+                            <td class="begin" style="border-top: 1px dashed;
+                            border-bottom: 1px dashed;"></td>
+                            <td class="name" style="font-size: 1.5rem;
+                            font-weight: 700;
+                            color: red;
+                            border-top: 1px dashed;
+                            border-bottom: 1px dashed;">
+                            YOU MAY BE WAITING UNTIL</td>
+                            <td class="length" id="id_predicted_time"> 10:15 AM </td>
+                        </tr>
+                        <tr>
+                            <td class="begin"></td>
+                            <td class="name"></td>
+                            <td class="length" style="font-weight: 700;">+- 40 secs</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {% load static %}
+                <img src="{% static 'notime/myproject.png' %}"  id="id_user_picture">
 
+            
+            
+        </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                Ok
+            </div>
+            <div class="row">
+                <div class="col">
+                        <img src="{% static 'notime/personicon.png' %}"  id="id_person_icon">
+                        <img src="{% static 'notime/personicon.png' %}"  id="id_person_icon">
+                        <img src="{% static 'notime/personicon.png' %}"  id="id_person_icon">
+                        <img src="{% static 'notime/personicon.png' %}"  id="id_person_icon">
+                        <img src="{% static 'notime/personicon.png' %}"  id="id_person_icon">
+                </div>
+                <div class="col" id="id_sticky_note">
+                    <div class="row justify-content-center">
+                    <span id="id_line_num">5</span>
+                    </div>
+                    <div class="row justify-content-center" id="id_sticky_text">
+                        people are currently in line
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col">
-    </div>
+    
+    
     
     
 
