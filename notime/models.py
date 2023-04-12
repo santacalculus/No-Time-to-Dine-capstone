@@ -2,7 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Predictions(models.Model):
-    curr_time = models.DateTimeField(auto_now=True)
+class WaitTime(models.Model) :
+    wait_time = models.IntegerField()
+    creation_time = models.DateTimeField()
+
+class Line(models.Model) :
+    num_people = models.IntegerField()
 
 

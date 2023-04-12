@@ -17,19 +17,26 @@ body{
     margin-top: 1vw;
 }
 
-#id_nav_logout, #id_register_link {
+#id_nav_logout, #id_register_link, #id_login_link {
     background-color:#9198e5;
     color: white;
 }
 
+#id_nav_logout:hover, #id_register_link:hover, #id_login_link:hover {
+    background-color:#e66465;
+    color: white;
+}
+
 .login-table {
+    font-weight: 700;
     color: white;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 
 }
 
 #id_page_name {
-    color: white;
+    font-weight: 700;
+    color: #f6e2b9;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 
 }
