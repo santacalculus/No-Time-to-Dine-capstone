@@ -94,7 +94,7 @@ def laprima_action(request) :
         
         #num = json.loads(num_people.content.decode('utf-8'))
         #context = {'num_people': num['num_people']}
-        context['num_people'] = 3
+        context['num_people'] = line_data
         print(context)
         return render(request, 'notime/laprima.html', context)
 
@@ -105,7 +105,11 @@ def laprima_action(request) :
     if request.method == 'POST' :
         return render(request, 'notime/laprima.html', context)
 
-
+def get_num_action(request) :
+    line_data = Line.objects.latest('id').num_people
+    response_data = {'num_people':Line.objects.latest('id').num_people}
+    response_json = json.dumps(response_data)
+    return HttpResponse(response_json, content_type='application/json')
 
 def _my_json_error_response(message, status=200):
     # You can create your JSON by constructing the string representation yourself (or just use json.dumps)
