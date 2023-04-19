@@ -14,6 +14,7 @@ from notime.forms import LoginForm, RegisterForm
 import json
 from django.views.decorators.csrf import ensure_csrf_cookie
 from notime.models import WaitTime, Line
+from datetime import timedelta
 
 
 # Create your views here.
@@ -94,7 +95,7 @@ def laprima_action(request) :
         curr_time = WaitTime.objects.latest('creation_time')
         curr_time.creation_time = timezone.now()
         curr_time.save()
-        print(curr_time.creation_time)
+        #print(curr_time.creation_time)
         #num = json.loads(num_people.content.decode('utf-8'))
         #context = {'num_people': num['num_people']}
         context['num_people'] = line_data
@@ -116,10 +117,12 @@ def get_num_action(request) :
     creation_data = wait.creation_time
     wait.creation_time = timezone.now()
     wait.save()
+    final_data = timedelta(seconds=wait_data)+wait.creation_time
     response_data = {}
     response_data['num_people'] = Line.objects.latest('id').num_people
     response_data['wait_time'] = wait_data
     response_data['creation_time'] = wait.creation_time.strftime('%H:%M:%S %p')
+    response_data['final_time'] = final_data.strftime('%H:%M:%S %p')
     #response_data['creation_time'] = WaitTime.objects.latest('id').creation_time
     response_json = json.dumps(response_data)
     print(response_json)

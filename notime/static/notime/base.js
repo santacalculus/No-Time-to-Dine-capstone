@@ -51,9 +51,14 @@ function updateTime(response) {
     let waitresponse = response.wait_time
     let waitdiv = document.getElementById("id_predicted_time")
     waitdiv.innerHTML = waitresponse
+    console.log(waitresponse)
     let createresponse = response.creation_time
     let creatediv = document.getElementById("id_creation_time")
     creatediv.innerHTML = createresponse
+    let finalresponse = response.final_time
+    let finaldiv = document.getElementById("id_final_time")
+    finaldiv.innerHTML = finalresponse
+    
 }
 
 function displayError(message) {
