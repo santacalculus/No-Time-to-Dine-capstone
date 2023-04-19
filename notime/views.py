@@ -91,7 +91,10 @@ def laprima_action(request) :
         
         #data = {"num_people": line.num_people}
         line_data = Line.objects.latest('id').num_people
-        
+        curr_time = WaitTime.objects.latest('creation_time')
+        curr_time.creation_time = timezone.now()
+        curr_time.save()
+        print(curr_time.creation_time)
         #num = json.loads(num_people.content.decode('utf-8'))
         #context = {'num_people': num['num_people']}
         context['num_people'] = line_data
@@ -106,9 +109,20 @@ def laprima_action(request) :
         return render(request, 'notime/laprima.html', context)
 
 def get_num_action(request) :
+    wait = get_object_or_404(WaitTime, id=1)
     line_data = Line.objects.latest('id').num_people
-    response_data = {'num_people':Line.objects.latest('id').num_people}
+    wait_data = WaitTime.objects.latest('id').wait_time
+    #creation_data = WaitTime.objects.latest('id').creation_time
+    creation_data = wait.creation_time
+    wait.creation_time = timezone.now()
+    wait.save()
+    response_data = {}
+    response_data['num_people'] = Line.objects.latest('id').num_people
+    response_data['wait_time'] = wait_data
+    response_data['creation_time'] = wait.creation_time.strftime('%H:%M:%S %p')
+    #response_data['creation_time'] = WaitTime.objects.latest('id').creation_time
     response_json = json.dumps(response_data)
+    print(response_json)
     return HttpResponse(response_json, content_type='application/json')
 
 def _my_json_error_response(message, status=200):

@@ -22,12 +22,12 @@ function loadTime() {
 
 function updatePage(xhr) {
     if (xhr.status == 200) {
-        console.log("yes")
         let response = JSON.parse(xhr.responseText)
         let numresponse = response.num_people 
         let lineDiv = document.getElementById("id_line_num")
         console.log(numresponse)
         lineDiv.innerHTML = numresponse
+        updateTime(response)
     }
     if (xhr.status == 0) {
         displayError("Cannot connect to server")
@@ -47,7 +47,17 @@ function updatePage(xhr) {
     
 }
 
+function updateTime(response) {
+    let waitresponse = response.wait_time
+    let waitdiv = document.getElementById("id_predicted_time")
+    waitdiv.innerHTML = waitresponse
+    let createresponse = response.creation_time
+    let creatediv = document.getElementById("id_creation_time")
+    creatediv.innerHTML = createresponse
+}
+
 function displayError(message) {
     let errorElement = document.getElementById("error")
     errorElement.innerHTML = message
 }
+

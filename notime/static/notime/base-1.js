@@ -9,7 +9,6 @@ function loadTime() {
     }
     xhr.open("GET", getURL, true)
     console.log("here")
-    console.log(line_data);
     xhr.send()
 }
 
