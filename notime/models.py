@@ -9,4 +9,7 @@ class WaitTime(models.Model) :
 class Line(models.Model) :
     num_people = models.IntegerField()
 
+class Average(models.Model) :
+    average_wait = models.IntegerField()
+
 

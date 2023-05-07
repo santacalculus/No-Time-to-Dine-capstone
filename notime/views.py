@@ -99,7 +99,7 @@ def laprima_action(request) :
         #num = json.loads(num_people.content.decode('utf-8'))
         #context = {'num_people': num['num_people']}
         context['num_people'] = line_data
-        print(context)
+        print("laprima",context)
         return render(request, 'notime/laprima.html', context)
 
     if not 'wait_time' in request.GET or not request.GET['wait_time'] or not 'num_people' in request.GET or not request.GET['num_people']:
@@ -112,20 +112,21 @@ def laprima_action(request) :
 def get_num_action(request) :
     wait = get_object_or_404(WaitTime, id=1)
     line_data = Line.objects.latest('id').num_people
+    # print("line_data",line_data)
     wait_data = WaitTime.objects.latest('id').wait_time
     #creation_data = WaitTime.objects.latest('id').creation_time
     creation_data = wait.creation_time
     wait.creation_time = timezone.now()
     wait.save()
-    final_data = timedelta(seconds=wait_data)+wait.creation_time
+    final_data = timedelta(seconds=wait_data)+wait.creation_time #converting wait_time seconds to minutes+seconds
     response_data = {}
     response_data['num_people'] = Line.objects.latest('id').num_people
     response_data['wait_time'] = wait_data
     response_data['creation_time'] = wait.creation_time.strftime('%H:%M:%S %p')
-    response_data['final_time'] = final_data.strftime('%H:%M:%S %p')
+    response_data['final_time'] = final_data.strftime('%H:%M:%S %p') #the time at which the wait ends
     #response_data['creation_time'] = WaitTime.objects.latest('id').creation_time
-    response_json = json.dumps(response_data)
-    print(response_json)
+    response_json = json.dumps(response_data) 
+    # print(response_data['num_people'])
     return HttpResponse(response_json, content_type='application/json')
 
 def _my_json_error_response(message, status=200):
